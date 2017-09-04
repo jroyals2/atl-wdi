@@ -23,7 +23,11 @@ var sumOfNums = function(numsArray){
 // Output: an array of the numbers from the first array that are strictly
 //         greater (i.e. greater than but not equal to) than 10
 var numsGreaterThanTen = function(numsArray){
-  // Your Code Here
+  var moreThanTen = 10
+  for (var i = 0; i < numsArray.length; i++){
+    moreThanTen => numsArray[i];
+  }
+  return moreThanTen;
 };
 
 // #3
