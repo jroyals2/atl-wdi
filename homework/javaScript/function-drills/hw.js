@@ -67,7 +67,7 @@ var wordsWithAtLeastFiveLetters = function(words){
 var allStartingWithA = function(words){
   for (var i = 0; i < words.length; i++) {
     if(!(word[i].slice(0, 1) === 'a' || words[i].slice(0, 1) === 'A')){
-      return false
+      return false;
     }
   }
   return true;
