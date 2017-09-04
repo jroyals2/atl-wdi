@@ -79,9 +79,9 @@ var allStartingWithA = function(words) {
 //          (case-insensitive), `false` otherwise
 var anyStartingWithB = function(words){
   for(var i = 0; i < words.length; i++){
-    if(words.splice(0, 1) === 'b' || words.splice(0, 1) === 'B'){
+    if(words[i].slice(0, 1) === 'b' || words[i].slice(0, 1) === 'B'){
       return true;
-    }
+    } 
   }
   return false;
 };
