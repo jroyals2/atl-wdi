@@ -60,13 +60,40 @@ track of whether tasks have been completed, it will also keep track of
 how long each task took to complete. Tasks can be grouped into 'projects' to
 keep them organized.
 
-> Answer here
+A task would have to be the starting point.  Each task would need a name, date completed, and length of time it took to comple.
+A project would need a name, a category, and list of tasks.
+
+var task = {
+  name: dishes,
+  dateCompleted: tuesday,
+  timeByHours: 1
+};
+
+var project{
+  proName: "House Cleaning"
+  category: "Kitchen"
+  listTasks: ["dishes", "moppping", "wipe counters"]
+}
 
 ### 2. Photo Sharing App
 
 In this app, users can upload photos to their accounts and share them with others. These photos can be grouped into albums.
 
-> Answer here
+You should break this up into two objects.  The account should be the overhead larger object. This is should include a name, when you became a memeber, number of albums, and friends.  The other object should be album which should include name of the album, how many photos,category, and date of creation.
+
+var account = {
+  name: Jerry,
+  memberSince: 'April 2017',
+  numberOfAlbums: 3
+  friends: ["Rick", "Steven", "Jill"]
+}
+var album = {
+  nameOfAlbum: 'Spring Break'
+  amountOfPhotos: 5,
+  category: 'beach selfies',
+  dateCreated: 'May 2017',
+  listOfPhotos: [photo1, photo2, photo3, photo4, photo5]
+}
 
 ### 3. Home Automation Manager
 
@@ -75,7 +102,22 @@ track of the time and temperature of the house that it monitors, and use that
 information to turn on and off different lights and adjust the thermostat up
 and down.
 
-> Answer here
+you would need 3 objects here. First you would need the house object which would contain name of the house, what street it is on, time, and temperature defaults. Then you would need light object with brightness, and location in house. Then you would also need a thermostat object which should have location in house, and temperature level.
+
+var house = {
+  street: 'lucky street',
+  name: 'house5',
+  time: '9:15am',
+  temperature: 72
+}
+var lights {
+  brightness: 'bright',
+  location: 'kitchen'
+}
+var thermostat = {
+  location: 'living room',
+  temperatureLevel: 'hot'
+}
 
 ### 4. Sneaker Store
 
@@ -83,7 +125,24 @@ This app will allow customers to browse a list of products (sneakers, in this
 case), add those products to a cart, and save that cart as a past order once the
 purchase is complete.
 
-> Answer here
+For this you will need three objects. One will be products with keys such as name of the shoe, size, color, and style.  Then you'll need a cart object that will have number of items, name of item, and total price. Last you'll need a past order object and will have date of purchase, items purchased, and totalspent.
+
+var products = {
+  name: 'rainbows',
+  size: 10,
+  color: 'brown'
+  style: ' I hate shoes'
+}
+var cart = {
+  numberOfItems: 4,
+  totaltPrice: 50,
+  nameOfItem: ['item1', item2', item3', item4']
+}
+var pastOrder = {
+  dateOfOrder: 'November 1, 2010',
+  itemsPurchased: ['item1', item2],
+  amountSpent: 560
+}
 
 ## Representing Abstractions in Code
 
@@ -139,7 +198,10 @@ var exampleLine = {
 
 What are some advantages and disadvantages of choosing these representations? Please give at least one example of each.
 
-> Answer here
+The advantages are that it is very simple to find each station on the line. EX. station.name ... However, it doesn't cover nearly enough information especially the how many stops it takes.  You also need a desination location and you are here style starting point followed by a count method. EX. 
+start: 'North Station',
+end: 'Hay Market',
+howManyStops: some function(){ counting stops};
 
 ### 6. Doctor Appointment App
 
@@ -242,7 +304,9 @@ Under what circumstances might one representation be a better choice than the
 other? Are there any circumstances in which the other representation might be
 the better choice?
 
-> Answer here
+Starting with A. I feel like the organization is more set up for the doctors.  This would clearly give doctors a list of patients for the day. However, anyone else who wanted to see a list of just doctors might get a bunch of info not needed. This would be useful if the doctors did not always have appointments.
+B. Seems more Calender friendly. Anyone could access the appointment with ease and see the doctor and patient occupied in those appointments.  However, it might be more difficult to find info searching through the doctor or patient names.  
+This would be usful if they had a general listing of appointments.
 
 ## Tying It Together
 
@@ -253,13 +317,21 @@ You've been tasked with building an in-browser tic-tac-toe game.
 a.  What are some possible entities that your application might use to model its
     data? Please pick at least two, with at least two properties apiece.
 
-  > Answer here
+  >  you would need players with a name, age, and avatar. Also you need a game object with some player using x's and some players using o's.
 
 b.  How might those entities be represented in JavaScript code?
 
-  > Answer here
+  > var player = {
+    name: 'Ryan'
+    age: 16,
+    avatar: 
+  }
+  var game = { 
+    playerX: player.name[0]
+    playerY: player.name[1]
+  }
 
 c.  Justify your choices in a) and b). Why these entities? Why these
     representations?
 
-  > Answer here
+  > You need to define a user, and then you would have to define who is on what side.
