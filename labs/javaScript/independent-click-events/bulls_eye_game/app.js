@@ -22,7 +22,10 @@ window.onload = function() {
   var ring3 = document.querySelector('.ring-3');
 
   body.addEventListener('click', bullseyeGame.miss);
-  ring1.addEventListener('click', bullseyeGame.outerRing)
+  ring1.addEventListener('click', bullseyeGame.outerRing);
+  ring2.addEventListener('click', bullseyeGame.innerRing);
+  ring3.addEventListener('click', bullseyeGame.bullsEye);
+  
 }
 
 
@@ -30,22 +33,43 @@ var bullseyeGame = {
   score: 0,
 
   updateScore: function(points) {
+    // starts a fuction that accepts points as a parameter
     var scoreElement = document.querySelector('.score');
+    // pulls the .score class from the document set it to scoreElement
     this.score += points
-
+    // this refers to the updateScore scope. so this is taking points and add
+    // seting them to score
     scoreElement.innerHTML = `${this.score} points`
+    // stringing together the score to points so you get a clean join also set to
+    // the scoreElement and changing the the old score
   },
 
   miss: function(event) {
     event.stopPropagation();
     alert('YOU MISSED');
-
     bullseyeGame.updateScore(0);
+    document.body.style.backgroundColor = 'yellow';
     // [ALERT:] needs to be bullseyeGame because this in clickEvents refers to the html element that was clicked
   },
 
   outerRing: function(event) {
     event.stopPropagation();
-    alert('outerRing was clicked')
-  }
+    alert('outerRing was clicked');
+    bullseyeGame.updateScore(10);
+    document.getElementsByClassName('ring-1')[0].style.backgroundColor = 'yellow';
+  },
+  innerRing: function(event) {
+    event.stopPropagation();
+    alert('innerRing was clicked');
+    bullseyeGame.updateScore(50);
+    document.getElementsByClassName('ring-2')[0].style.backgroundColor = 'yellow';
+  },
+bullsEye: function(event) {
+  event.stopPropagation();
+  alert('bullseye was clicked');
+  bullseyeGame.updateScore(100);
+  document.getElementsByClassName('ring-3')[0].style.backgroundColor = 'yellow';
+  
+},
+
 }
