@@ -3,14 +3,18 @@
 // See LICENSE for details.
 
 var timerUI = {
-  drawNumericDisplay: function(timerValue){
-    // Your Code Here
+  drawNumericDisplay: function(timerValue) {
+    document.getElementById('numeric-display').textContent = timerValue;
   },
   drawProgressBars: function(timerValue){
-    // Your Code Here
+    const timePass = 100 - timerValue;
+    document.getElementsByClassName('progress-bar')[0].style.width = timePass + '%';
   },
   drawLitFuses: function(timerValue){
-    // Your Code Here
+    const timePass = timerValue/100;
+
+    document.getElementsByClassName('unburnt')[0].style.width = timePass *98+ '%';
+    document.getElementsByClassName('burnt')[0].style.width = timePass + '%';
   },
   drawCrawlers: function(timerValue){
     // Your Code Here
