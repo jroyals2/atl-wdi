@@ -4,11 +4,14 @@
 
 var timerUI = {
   drawNumericDisplay: function(timerValue) {
-    const timePass = 100 - timerValue;
     document.getElementById('numeric-display').textContent = timerValue;
-    if(timePass >= 90) {
-      document.getElementById('numeric-display').style.textColor = '#FF0000';
-    };
+    const timePass = 100 - timerValue;
+    if (timePass >= 90){
+      document.getElementById('numeric-display').style.color = '#FF0000';
+    }
+    if (timePass >= 90){
+      document.getElementById('numeric-display').style.fontSize = (timePass * 5) + '%';
+    }
   },
   drawProgressBars: function(timerValue){
     const timePass = 100 - timerValue;
