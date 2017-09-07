@@ -4,7 +4,11 @@
 
 var timerUI = {
   drawNumericDisplay: function(timerValue) {
+    const timePass = 100 - timerValue;
     document.getElementById('numeric-display').textContent = timerValue;
+    if(timePass >= 90) {
+      document.getElementById('numeric-display').style.textColor = '#FF0000';
+    };
   },
   drawProgressBars: function(timerValue){
     const timePass = 100 - timerValue;
@@ -14,9 +18,15 @@ var timerUI = {
     const timePass = timerValue/100;
 
     document.getElementsByClassName('unburnt')[0].style.width = timePass *98+ '%';
-    document.getElementsByClassName('burnt')[0].style.width = timePass + '%';
+    document.getElementsByClassName('burnt')[0].style.width = (1-timePass) * 98 + '%';
   },
   drawCrawlers: function(timerValue){
-    // Your Code Here
+    const timePass = 100 - timerValue;
+    if (timePass % 2 === 0){
+      document.getElementsByClassName('crawler')[0].style.marginTop = '0px';
+    } else {
+      document.getElementsByClassName('crawler')[0].style.marginTop = '10px';
+    }
+    document.getElementsByClassName('crawler')[0].style.marginLeft = (timePass*10) + 'px';
   }
 };
