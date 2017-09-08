@@ -50,45 +50,37 @@ const Presenter = {
   insertCounterComponent: function(newCountId){
     console.log(`insert counter component #${newCountId}`);
     // Your Code here
-    let newCounterDiv = document.createElement('div');
-    newCounterDiv.innerHTML = "<h3>Count: <span>0</span></h3><button class='increment'> + 1 </button></div>";
-    newCounterDiv.className += 'counter';
-    newCounterDiv.dataset.countId = newCountId;
-    newCounterDiv.getElementsByClassName('increment')[0].onclick = AppController.onClickIncrement;
-    document.getElementById('counter-list').appendChild(newCounterDiv);
   },
   refreshCounterComponent: function(countId){
     console.log(`refresh counter component #${countId}`);
-    // Your Code Here2
-    let val = CounterCollection.getCounterValue(countId);
-    document.querySelector(`[data-count-id="${countId}"] span`).innerHTML = val;
-
+    // Your Code Here
   },
   removeCounterComponent: function(countId){             // REACH
     console.log(`remove counter component #${countId}`);
-    // Your Code Here3
+    // Your Code Here
   }
 };
 
 // Top-Level Application Control //
 const AppController = {
   onClickNewCounter: function(event){
-//your code here 3
-    CounterCollection.createCounter();
-    Presenter.insertCounterComponent(CounterCollection.lastCountId);
-   
+    const counterDiv = document.getElementById('counter-list');
+    const str = "<div class='counter' data-index='2'><h3>Count: <span>0</span></h3><button class='increment'> + 1 </button></div>";
+    counterDiv.innerHTML += str;
+    
   },
   onClickIncrement: function(event){
-  // Your code here 4 
+  let counterValue = document.getElementsByTagName("span")[0];
+  let total = 6;
   let countId = Number(event.target.parentNode.dataset.countId);
-  CounterCollection.incrementCounter(countId);
-  Presenter.refreshCounterComponent(countId);
+  counterValue.textContent = CounterCollection.incrementCounter(countId);
   },
   onClickDelete: function(event){                           // REACH
-    // Your Code Here 4
+    // Your Code Here
   }
 };
 
 window.onload = function(){
   document.getElementById('new-counter').onclick = AppController.onClickNewCounter;
+  document.getElementById('counter-list').onclick = AppController.onClickIncrement;
 };
