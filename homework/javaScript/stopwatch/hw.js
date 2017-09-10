@@ -21,10 +21,10 @@ const Stopwatch = {
     this.millisecs += 10;
     if (this.millisecs >= 1000) {
       this.millisecs -= 1000;
-      this.seconds ++;
+      this.secs++;
     } 
-    if (this.seconds >= 60){
-      this.seconds -= 60;
+    if (this.secs >= 60){
+      this.secs -= 60;
       this.mins++;
     }
   },
@@ -32,6 +32,7 @@ const Stopwatch = {
     this.millisecs = 0;
     this.secs = 0;
     this.mins = 0;
+    this.laps = [];
     // Your Code Here
   },
   start: function(){
@@ -49,7 +50,7 @@ const Stopwatch = {
     if (this.isRunning = true){
       this.laps.push({
         millisecs: this.millisecs,
-        seconds: this.seconds,
+        seconds: this.secs,
         mins: this.mins,
       })
     }
@@ -59,9 +60,11 @@ const Stopwatch = {
 /// User Interface ///
 const ViewEngine = {
   updateTimeDisplay: function(mins, secs, millisecs){
-    document.getElementById('millisecs').innerHTML = 
-    document.getElementById('seconds').innerHTML =
-    document.getElementById('mins').innerHTML =
+    document.getElementById('mins').innerHTML = ViewHelpers.zeroFill(mins, 2);
+    document.getElementById('secs').innerHTML =ViewHelpers.zeroFill(secs, 2);
+    document.getElementById('millisecs').innerHTML = ViewHelpers.zeroFill(millisecs/10, 2);
+    
+    
   },
   updateLapListDisplay: function(laps){
     // Your Code Here
@@ -69,21 +72,31 @@ const ViewEngine = {
 };
 const ViewHelpers = {
   zeroFill: function(number, length){
-    
+    var str = number.toString();
+    let numbers = Math.max(length - str.length, 0);
+    for (var i = 0; i < (length - str.length); i++ ){
+      str = '0' + str;
+    }
+    return str;
   },
 };
 
 /// Top-Level Application Code ///
 const AppController = {
   handleClockTick: function(){
-    // code
+    ViewEngine.updateTimeDisplay(Stopwatch.mins, Stopwatch.secs, Stopwatch.millisecs);
   },
   handleClickStart: function() {
     if(!Stopwatch.isRunning){
       Stopwatch.start();}
   },
   handleClickStopReset: function(){
-    // Your Code Here
+    if(Stopwatch.isRunning){
+      Stopwatch.stop();
+    } else {
+      Stopwatch.reset();
+      ViewEngine.updateTimeDisplay(0, 0, 0);
+    }
   },
   handleClickLap: function(){
     // Your Code Here
