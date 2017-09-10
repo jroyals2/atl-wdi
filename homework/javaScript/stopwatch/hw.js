@@ -18,26 +18,50 @@ const Stopwatch = {
   laps: [],
   // DO NOT EDIT ABOVE THIS LINE
   advanceTenMillisecs: function(){
-    // Your Code Here
+    this.millisecs += 10;
+    if (this.millisecs >= 1000) {
+      this.millisecs -= 1000;
+      this.seconds ++;
+    } 
+    if (this.seconds >= 60){
+      this.seconds -= 60;
+      this.mins++;
+    }
   },
   reset: function(){
+    this.millisecs = 0;
+    this.secs = 0;
+    this.mins = 0;
     // Your Code Here
   },
   start: function(){
-    // Your Code Here
+    if (!this.isRunning) {
+      this.isRunning = true;
+      this.tickClock();
+    }
+    
   },
   stop: function(){
+    this.isRunning = false;
     // Your Code Here
   },
   lap: function(){
-    // Your Code Here
+    if (this.isRunning = true){
+      this.laps.push({
+        millisecs: this.millisecs,
+        seconds: this.seconds,
+        mins: this.mins,
+      })
+    }
   }
 };
 
 /// User Interface ///
 const ViewEngine = {
   updateTimeDisplay: function(mins, secs, millisecs){
-    // Your Code Here
+    document.getElementById('millisecs').innerHTML = 
+    document.getElementById('seconds').innerHTML =
+    document.getElementById('mins').innerHTML =
   },
   updateLapListDisplay: function(laps){
     // Your Code Here
@@ -45,17 +69,18 @@ const ViewEngine = {
 };
 const ViewHelpers = {
   zeroFill: function(number, length){
-    // Your Code Here
+    
   },
 };
 
 /// Top-Level Application Code ///
 const AppController = {
   handleClockTick: function(){
-    // Your Code Here
+    // code
   },
   handleClickStart: function() {
-    // Your Code Here
+    if(!Stopwatch.isRunning){
+      Stopwatch.start();}
   },
   handleClickStopReset: function(){
     // Your Code Here
@@ -66,5 +91,7 @@ const AppController = {
 };
 
 window.onload = function(){
-  // Attach AppController methods to the DOM as event handlers here.
+  document.getElementById('start').onclick = AppController.handleClickStart;
+  document.getElementById('lap').onclick = AppController.handleClickLap;
+  document.getElementById('stop').onclick = AppController.handleClickStopReset;
 };
