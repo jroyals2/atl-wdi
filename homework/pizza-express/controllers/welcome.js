@@ -2,7 +2,9 @@ const express = require('express')
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.send("Welcome to Pizza Express!!");
+    let str = "Welcome to Pizza Express!!";
+    res.render("index", {
+        welcome: str
 });
-
+});
 module.exports = router;
