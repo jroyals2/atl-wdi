@@ -1,0 +1,31 @@
+body {
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    font-size: 36px;
+    background-image: url("https://i.pinimg.com/originals/36/10/06/3610062ed612bf558fc08ed252fe6241.jpg");
+}
+h1 {
+    color: green;
+    background-color: black;
+}
+.head {
+    background-color: black;
+}
+.mushroom {
+    opacity: 0.3;
+}
+.mushroom:hover {
+    opacity: 1;
+}
+h3{
+    background-color: red;
+}
+h3:hover {
+    background-color: orange;
+}
+.grow:hover
+{
+        -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        transform: scale(1.5);
+}
