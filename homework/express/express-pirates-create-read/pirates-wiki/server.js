@@ -12,7 +12,7 @@ const piratesController = require('./controllers/pirates');
  app.use(bodyParser.urlencoded({
      extended: true
    }));
-   app.use('/pirates', piratesController);
+app.use('/pirates', piratesController);
 
 app.listen(PORT, () => {
     console.log("express is listening.....")

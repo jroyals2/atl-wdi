@@ -19,7 +19,9 @@ router.get("/new", (req, res) => {
 router.get("/:id", (req,res) => {
     const id = parseInt(req.params.id);
     const pirate = pirates.seededPirates[id];
-    res.render('pirates/show',{pirate});
+    res.render('pirates/show',{
+    pirate: pirate
+    });
 })
  // POST PIRATES
 
