@@ -4,12 +4,16 @@ const pirates = require('../models/pirates.js');
 
 
 // INDEX PIRATES
- router.get("/index", (req, res) => {
+ router.get("/", (req, res) => {
      res.render("pirates/index", {
          pirates: pirates.seededPirates
      })
  })
  // NEW PIRATES
+router.get("/new", (req, res) => {
+    res.render('pirates/new');
+})
+
 
  // SHOW PIRATES
 router.get("/:id", (req,res) => {
@@ -18,6 +22,14 @@ router.get("/:id", (req,res) => {
     res.render('pirates/show',{pirate});
 })
  // POST PIRATES
+
+ router.post('/', (req, res) => {
+     console.log(req.body);
+     const newPirate = req.body;
+     pirates.seededPirates.push(newPirate);
+     res.redirect('/pirates');
+
+ })
 
 
 module.exports = router;
