@@ -11,8 +11,17 @@ class Tamagotchi {
     }
     cry(){
         this.foodInTummy -= 1;
-        console.log(this.foodInTummy)
         console.log(`${this.name} WAAAHHHHHH!!!!!!`)
+        console.log(this.foodInTummy)
+    }
+    puke(){
+        this.foodInTummy -= 1;
+        console.log("WAAAAA WAAAA");
+        console.log(`${this.name} has this much food in their tummy ${this.foodInTummy}`);
+    }
+    yawn(){
+        this.restedness -= 1;
+        console.log(`${this.name} has current restedness of ${this.restedness}`)
     }
 }
 
@@ -21,6 +30,8 @@ const tamaRyan = new Tamagotchi('Ryan', 'Big beetle');
 const tamaBen = new Tamagotchi('Ben', 'Small Thing') ;
 tamaBen.cry();
 tamaRyan.cry();
+tamaBen.puke();
+tamaRyan.yawn();
 
 
 //test out your Tamagotchies below via console.logs
