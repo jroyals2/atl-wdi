@@ -80,6 +80,4 @@ const customers = [
 ]
 
 // CODE FOR QUESTION 6 HERE
-Promise.all(customers.map((a)=> {
-kitchen.order(a.order).then(console.log).catch(console.log)
-}))
+Promise.all(customers.map(a => kitchen.order(a.order))).then((data) => console.log("all food has been delivered", data)).catch(console.log)
