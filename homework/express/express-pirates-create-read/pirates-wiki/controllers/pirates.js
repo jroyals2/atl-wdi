@@ -32,6 +32,49 @@ router.get("/:id", (req,res) => {
      res.redirect('/pirates');
 
  })
+//==============================
+// EDIT
+//==============================
+router.get('/:id/edit', (req, res) => {
+    res.render('pirates/edit', {
+        pirates: {
+            id: req.params.id,
+            name: pirates.seededPirates[req.params.id].name,
+            birthplace: pirates.seededPirates[req.params.id].birthplace,
+            death_year: pirates.seededPirates[req.params.id].death_year,
+            base: pirates.seededPirates[req.params.id].base,
+            nickname: pirates.seededPirates[req.params.id].nickname
+        }
+    })
+})
+
+
+
+//==============================
+// UPDATE
+//==============================
+router.put('/:id', (req, res) => {
+    console.log(req.body)
+    const pirateToEdit = pirates.seededPirates[req.params.id];
+
+    pirateToEdit.name = req.body.name;
+    pirateToEdit.birthplace = req.body.birthplace;
+    pirateToEdit.death_year = req.body.death_year;
+    pirateToEdit.base = req.body.base;
+    pirateToEdit.nickname = req.body.nickname;
+    res.redirect('/pirates');
+})
+
+
+//==============================
+// DESTROY
+//==============================
+router.delete('/:id', (req, res) => {
+pirates.seededPirates.splice(req.params.id, 1);
+res.redirect("/pirates");
+});
+
+
 
 
 module.exports = router;

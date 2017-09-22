@@ -3,10 +3,10 @@ const app = express();
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
 const PORT = 3000;
-
+const methodOverride = require('method-override');
 const piratesController = require('./controllers/pirates');
 
-
+app.use(methodOverride('_method'));
  app.set('view engine', 'hbs');
  //app.use('/pirates', piratesController);
  app.use(bodyParser.urlencoded({
