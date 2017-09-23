@@ -10,6 +10,15 @@
     <script type="text/javascript" src="player.js"></script>
   </head>
   <body>
-
+    <div>
+    <input type="button" id = "feed" value = "feed" onclick="player.feedTamagotchi(tamaBen)">
+    <input type="button" id = "rest" value = "sleepy time" onclick="player.knockOutTamagotchi(tamaBen)">
+    <input type="button" id = "medicate" value = "Medicate" onclick="player.medicateTamagotchi(tamaBen)">
+    </div>
+    <div>
+      <input type = "button" id ="startItUp" value = "START" onclick="tamaBen.start()">
+      <input type = "button" id ="stop" value = "STOP THE MADNESS" onclick="tamaBen.stop()">
+      
+    </div>
   </body>
 </html>
