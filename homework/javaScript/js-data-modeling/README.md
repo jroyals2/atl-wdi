@@ -130,28 +130,171 @@ const bob = {
 
 This app will be a tool for managing all of your favorite bands' concerts; it will keep track of their tour dates, ticket purchasing, and next recommended show.
 
+1.
+
+User   |||   Concerts   |||   Bands ||| 
+name         name             name
+age          location         members
+recomConcert bands            tour dates
+             ticket price
+
+2.
+
+const user = 
+{
+  name: string,
+  age: number,
+  recomConcerts: [];
+}
+const concerts = 
+{
+  name: string,
+  location: string,
+  ticket price: number,
+  bands: []
+}
+const bands = 
+{
+  name: string,
+  members: [],
+  tourDates: []
+}
+
+3. This one is a bit weird the flow is more relational than a NoSql flow but for NoSql purposes this makes most sense
+
+user Bob ={
+  name: bob,
+  age: 29,
+  recomConcerts: [{
+    name: RockOut,
+    location: Atlanta,
+    ticketPrice: 100,
+    bands: [{
+      name: RAWR,
+      members: [Frank, Billy, Maui]
+      tourDates: [Atlants, Orlando, Salt Lake City]
+    }]
+  }]
+}
 
 
 ### 4. Coffee To-Go App
 
 This app will allow customers to browse a list of coffeeshops nearby, order drinks off of their menu, add those drinks to a shopping cart, and save that cart as a past order once the purchase is complete.
 
+
+1.
+
+Customer    |||    CoffeeShops    |||    Menu   |||    Cart
+Name               Name                  Items         Inventory
+Age:               Location             prices          amount owed
+cart               menu                                           
+favorite shops
+
+2.
+const customer = {
+  name: string,
+  age: number,
+  cart: [],
+  favoriteShops: []
+}
+
+const cofffeeShops = {
+  name: string,
+  location: string,
+  menu: []
+}
+const menu = {
+  items: [],
+  prices: []
+}
+const cart = {
+  inventory = [],
+  amount owed: number,
+  paid: boolean
+}
+
+3.
+const Bill {
+  name: Bill,
+  age: 29,
+  cart: [{
+    inventory: [Starbucks.latte, Starbucks.espresso],
+    amountOwed: 10,
+    paid: false
+  }]
+  favoriteShops: [{
+    name: Starbucks,
+    location: Atlanta,
+    menu: [{
+      items:[latte, espresso],
+      prices: [4, 5]
+    }]
+  }]
+}
+ 
+
 ### 5. Team Tracker App
 
 This app shows you all the latest stats from your favorite sports teams. You can view individual player stats and full team stats.
 
-```
-Write your answer here or in a separate js file.
-```
+1.  
+USER      |||       TEAMS         |||       PLAYERS  ||  Stats 
+name              name                      name        passing
+age               location                  age         rushing
+favTeams          stats                     stats       receiving
+                  players
+
+2. 
+const user = {
+  name: string,
+  age: number,
+  favTeams: []
+}
+const teams ={
+  name: string,
+  location: string,
+  stats: [],
+  players: []
+}
+const players = {
+  name: string,
+  age: number,
+  stats: []
+}
+const stats = {
+  passing: number,
+  rushing: number,
+  receiving: number
+}
+3. 
+user Bob {
+  name: Bob,
+  age: 29,
+  favTeams: [{
+    name: Falcons,
+    location: Atlanta,
+    stats: [{
+      passing: 2000,
+      rushing: 3000,
+    }]
+    players: [{
+      name: Matt Ryan,
+      age: 32,
+      stats: [{
+        passing: 2500,
+        rushing: 50
+      }]
+    }]
+  }]
+}
 
 
 ### Final Thoughts:
 
 Q. When you were creating relationships between the models, what were some thoughts or questions you had to help guide a connection between them?
 
-```
-Write your answer here or in a separate js file.
-```
+You really just have to step back and think about how everything interacts with everything.  The more you can put down relational wise the better you can understand how to format your data.  Without these steps it would make bringing data into the database confusing and also would lead to having to adjust placements of the data within the base several times. 
 
 ### Reading and Videos for Tomorrow
 Now that you've had some practice really thinking about the data design of an app, we're going to learn about MongoDB, a no-SQL database. Starting tomorrow, our Express apps will be talking to the Mongo database through Mongoose. Since we're covering a LOT of ground tomorrow, take some time to introduce yourself to concepts and lingo surrounding MongoDB and Mongoose. You will _not_ have to memorize the technical details here.
