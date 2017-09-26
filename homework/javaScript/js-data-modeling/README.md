@@ -29,26 +29,108 @@ entities/abstractions (e.g. Senior Paws app, above) that the app might use, and 
 
 This app provides easy access to all your e-mail service providers in one app. The app will let you select one of your email addresses and view your e-mails for that address.
 
-```
-Write your answer here or in a separate js file.
-```
+1. User      ||  Email Accounts   |||   Emails
+   ID             Name                  Subject
+   Name           Type                  when sent
+   Age            Emails                category
+   email accts    
+
+2. const user = {
+  ID: number,
+  name: string,
+  age: number,
+  email accounts: [];
+}
+const emailAccounts {
+  name: string,
+  type: string,
+  emails: []
+}
+const emails = {
+  subject: string,
+  sent: number,
+  category
+}
+
+3.  const bob = 
+{
+  ID: 1234,
+  name: Bob,
+  age: 29,
+  email accounts: [{
+    name: yahoo,
+    type: main,
+    emails: [{
+      subject: youAreFired,
+      sent: 09232017,
+      category: bad
+    }]
+    name: gmail,
+    type: junk,
+    emails: [{
+      subject: ad,
+      sent: 09122016,
+      category: weird
+    }]
+  }];
+}
 
 ### 2. Radio on the Internet app
 
 This app hosts a ton of radio stations, each featuring their own playlists of songs. The radio stations can be listed by genre or popularity.
 
+1.
+USER  |||   RADIO STATION  |||  SONGS
+name        name                name  
+age         category            category
+radio st    playlists           length
+            popularity
 
-```
-Write your answer here or in a separate js file.
-```
+2. 
+const user = {
+  name: string,
+  age: number,
+  radioStation: []
+}
 
+const radioStation = 
+{
+  name: string,
+  category: string,
+  playlists: string,
+  popularity: number
+}
+const songs = {
+  name: string,
+  category: string,
+  length: number
+}
+
+3.
+
+const bob = {
+  name: bob,
+  age: 29,
+  radioStation: [
+    const rock = 
+{
+  name: Sweet,
+  category: rock,
+  playlists: [70s, 80s, 90s],
+  popularity: 1000
+  songs: [{
+    name: sweet Child,
+    category: rock,
+    length 500
+  }]
+}
+  ]
+}
 ### 3. Rock Concert App
 
 This app will be a tool for managing all of your favorite bands' concerts; it will keep track of their tour dates, ticket purchasing, and next recommended show.
 
-```
-Write your answer here or in a separate js file.
-```
+
 
 ### 4. Coffee To-Go App
 
