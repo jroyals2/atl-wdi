@@ -43,3 +43,7 @@ app.use('/', donutsController);
 
 
 //CREATE THE MONGOOSE CONNECTION and SET APP TO LISTEN to 3000
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`express is listening on ${PORT}`)
+})
