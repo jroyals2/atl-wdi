@@ -6,8 +6,14 @@ mongoose.Promise = global.Promise;
 const Schema = mongoose.Schema;
 
 const newDonuts = new Schema({
-    name: String,
-    description: String,
+    name: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
     img: String,
     price: Number,
     qty: Number
