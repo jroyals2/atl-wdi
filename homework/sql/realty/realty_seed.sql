@@ -1,0 +1,9 @@
+INSERT INTO apartment (number, apartment_number, number_of_bedrooms, number_of_bathrooms, address, tenant, occupied, square_footage, price) VALUES (1, 300, 4, 2, '1234 Whatever Drive', 'Ryan', true, 1200, 3000);
+INSERT INTO apartment (number, apartment_number, number_of_bedrooms, number_of_bathrooms, address, tenant, occupied, square_footage, price) VALUES (2, 310, 6, 3, '3456 Yes Please', 'Steve', true, 1500, 4000);
+INSERT INTO apartment (number, apartment_number, number_of_bedrooms, number_of_bathrooms, address, tenant, occupied, square_footage, price) VALUES (3, 450, 5, 1, '5000 No Sir', 'Bertha', false, 500, 10000);
+INSERT INTO office (office_number, number_of_floors, square_feet, cubicles, number_bathrooms, address, company_name, occupied, price) VALUES (20, 45, 2500, 40, 3, '123 Please Dont Make me work here with this many bathrooms', 'No Bathrooms inc', true, 50000);
+INSERT INTO office (office_number, number_of_floors, square_feet, cubicles, number_bathrooms, address, company_name, occupied, price) VALUES (300, 500, 50000, 78, 50, 'What is happening here', 'my head hurts', false, 5040);
+INSERT INTO office (office_number, number_of_floors, square_feet, cubicles, number_bathrooms, address, company_name, occupied, price) VALUES (4, 1, 10000, 3, 43, 'mmmm why do we have to make so many seeds', 'I want to go to the beach', true, 40000);
+INSERT INTO storefront (address, occupied_status, price, kitchen, square_feet, owner, outdoor_seating) VALUES ('whyyyyyyy', true, 30500, true, 5000, 'kidder', false);
+INSERT INTO storefront (address, occupied_status, price, kitchen, square_feet, owner, outdoor_seating) VALUES ('HA HA HA LOL', false, 30000, false, 4000, 'noppers', true);
+INSERT INTO storefront (address, occupied_status, price, kitchen, square_feet, owner, outdoor_seating) VALUES ('12312 ZZZZZ', true, 234234, true, 2111, 'hahah', true);
