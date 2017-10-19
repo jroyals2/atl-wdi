@@ -8,4 +8,9 @@
 7. SELECT AVG (salary) FROM players;
 8. SELECT name, salary FROM players WHERE salary > 10000000;
 
-9. 
+9. SELECT name, salary FROM players ORDER BY salary DESC LIMIT 1;
+10. SELECT name, position FROM players ORDER BY salary LIMIT 100;
+11. SELECT AVG (salary) FROM players WHERE position = 'DE';
+12. SELECT players.name FROM teams INNER JOIN players ON players.team_id = teams.id WHERE teams.name = 'Buffalo Bills';
+13. SELECT SUM (players.salary) FROM teams INNER JOIN players ON players.team_id = teams.id WHERE teams.name = 'New York Giants';
+14. SELECT players.name  FROM teams INNER JOIN players ON players.team_id = teams.id WHERE teams.name = 'Green Bay Packers' ORDER BY players.salary LIMIT 1;
