@@ -13,5 +13,14 @@ SELECT * FROM city WHERE countrycode ='SMR';
 (Serravalle/Dogano)
 
 # Clue 5
+SELECT * FROM city WHERE name LIKE 'Serra%';
 
+# Clue 6
+SELECT captial FROM country WHERE code='BRA'
+SELECT name FROM country WHERE id = 211
 
+BRASILIA
+
+#CLUE 7
+SELECT name, population FROM city WHERE population = 91084;
+Santa Monica
