@@ -9,7 +9,7 @@ _note_: The players and teams tables are **related**.
 
 <hr>
 &#x1F534; COMMIT 1<br>
-"Commit: NFL - I seeded the database with the players and teams info"
+"Commit: NFL - I seeded the database with the players and teams info "
 <hr>
 
 ### Step 2
