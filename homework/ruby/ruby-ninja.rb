@@ -90,6 +90,7 @@ while x < 50
     puts second_range[x]
     x += 1
 end
+
 new_array = []
 first_range.each do |things|
     if things.odd? == true 
@@ -105,3 +106,15 @@ first_range.map do |num|
         p num
     end
 end
+
+# Challenge 9 
+
+new_range = (1..1000)
+new_range = new_range.to_a
+added = 0;
+new_range.each do|stuff|
+    if stuff % 3 == 0 || stuff % 5 == 0
+        added += stuff
+    end
+end
+p added
