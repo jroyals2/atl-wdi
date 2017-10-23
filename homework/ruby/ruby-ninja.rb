@@ -75,3 +75,33 @@ puts favorite_movie
 
 # Challenge 8
 
+first_range = (1..10)
+first_range = first_range.to_a
+
+second_range = (1..999)
+second_range = second_range.to_a
+
+for range in first_range 
+    range = range.to_s
+    p range
+end
+x = 0
+while x < 50 
+    puts second_range[x]
+    x += 1
+end
+new_array = []
+first_range.each do |things|
+    if things.odd? == true 
+        new_array.push(things * 2)
+    end
+end
+p new_array
+
+first_range.map do |num|
+    if num % 2 == 0 
+       p num.to_s
+    else
+        p num
+    end
+end
