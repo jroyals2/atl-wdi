@@ -118,3 +118,21 @@ new_range.each do|stuff|
     end
 end
 p added
+
+# Challenege 10 FINAL CHALLENGE
+
+def check_prime?(number)
+(2...(number)).map do |things|
+    if(number % things) == 0
+        return false
+    end
+end
+return true
+end
+p check_prime?(13) 
+
+def get_prime(max)
+    return (1...max).select{ |n| check_prime? n }
+end
+
+p get_prime(100)
