@@ -14,3 +14,30 @@
 12. SELECT players.name FROM teams INNER JOIN players ON players.team_id = teams.id WHERE teams.name = 'Buffalo Bills';
 13. SELECT SUM (players.salary) FROM teams INNER JOIN players ON players.team_id = teams.id WHERE teams.name = 'New York Giants';
 14. SELECT players.name  FROM teams INNER JOIN players ON players.team_id = teams.id WHERE teams.name = 'Green Bay Packers' ORDER BY players.salary LIMIT 1;
+
+
+
+
+SELECT 
+FROM 
+WHERE
+GROUP BY 
+HAVING
+ORDER BY
+
+
+
+READS LIKE 
+
+
+FROM 
+WHERE
+GROUP BY
+HAVING
+SELECT
+ORDER BY
+
+
+If anyone wants to know how a full SELECT statement works, reads, 
+and what and alias is, when we break for lunch I can show you a brief run down of all that.  
+It makes SQL much easier if you understand how the SELECT statement reads.

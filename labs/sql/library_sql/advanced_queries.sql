@@ -24,7 +24,20 @@ SELECT books.title as book_name FROM authors INNER JOIN books ON authors.id = bo
 SELECT * FROM authors INNER JOIN books ON authors.id = books.author_id WHERE books.publication_date < 1980  AND authors.nationality != 'United States of American';
 
 -- Find all authors whose names start with 'J'.
+SELECT * FROM authors WHERE name LIKE 'J%';
 
 -- Find all books whose titles contain 'the'.
+SELECT * FROM books WHERE title ILIKE '%the%';
 
 -- Find all authors who have written books with that start with the letter 'N'.
+SELECT authors.name FROM authors JOIN books ON authors.id = books.author_id WHERE books.title LIKE 'N%';
+
+
+
+
+
+SELECT * FROM authors JOIN books ON authors.id = books.author_id WHERE 
+
+SELECT a.name AS author_guy 
+FROM authors AS a JOIN books AS b ON a.id = b.author_id 
+WHERE a.nationality ='United States of America' 

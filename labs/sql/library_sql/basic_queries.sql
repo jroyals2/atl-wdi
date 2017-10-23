@@ -42,4 +42,4 @@ UPDATE books SET title = 'I like penguins' WHERE title ='I Like Turtles';
 DELETE FROM books WHERE author_id = 10;
 
 -- Delete your author entry
-DELETE FROM authors WHERE name = 'James Royals';
+DELETE FROM authors WHERE name = 'James Royal
