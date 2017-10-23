@@ -30,3 +30,14 @@ puts "#{christine} and I like #{likesTo}"
 g = "2"
 gToNumber = 2
 puts g.to_i + gToNumber
+
+# Challenge 5
+
+puts "What is your name"
+name = gets.chomp
+puts "Input and integer"
+number = gets.chomp
+puts number.to_i * 2
+puts "what do you like to do?"
+favor = gets.chomp
+puts "#{name} likes to #{favor}"
