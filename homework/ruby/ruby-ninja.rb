@@ -44,13 +44,34 @@ puts g.to_i + gToNumber
 
 # Challenge 6
 
-my_first_array = []
-my_first_array = ["What", "Are", "You", "Making me", "Do"]
-my_first_array = my_first_array + [1, 2, 3, 4]
-puts my_first_array.last
-puts my_first_array.first
-my_first_array[1] = "Joe"
-my_first_array[2] = 3
-my_first_array.push(true)
-my_first_array.push(my_first_array[3].class)
-puts my_first_array
+# my_first_array = []
+# my_first_array = ["What", "Are", "You", "Making me", "Do"]
+# my_first_array = my_first_array + [1, 2, 3, 4]
+# puts my_first_array.last
+# puts my_first_array.first
+# my_first_array[1] = "Joe"
+# my_first_array[2] = 3
+# my_first_array.push(true)
+# my_first_array.push(my_first_array[3].class)
+# puts my_first_array
+
+# Challenge 7 
+
+my_favorite_animals = {
+    "edgar": "donkey",
+    "ryan": "dog",
+    "billy": "goat",
+    "andrea": "horse",
+    "chris": "sorta human"
+}
+my_favorite_animals[:"edgar"] = "bear"
+
+puts my_favorite_animals
+
+favorite_movie = {}
+
+favorite_movie["movie"] = "scary"
+puts favorite_movie
+
+# Challenge 8
+
